@@ -1,0 +1,6 @@
+{
+    "sct_change_nifti_pixel_type":{
+        "commandName": "sct_change_nifti_pixel_type",
+        "scriptName" : "sct_change_nifti_pixel_type"
+    }
+}

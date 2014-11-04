@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Spring MVC-4.1.0.RELEASE">
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-webmvc-portlet-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-websocket-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-webmvc-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-web-4.1.0.RELEASE.jar" />
+  </library>
+  <library name="Maven: commons-fileupload:commons-fileupload:1.2.2">
+    <archive path="/root/.m2/repository/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+  <library name="Hibernate 4.2.2-4.2.2">
+    <archive path="/home/adminer/inf4990-02/spinal/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/dom4j-1.6.1.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/antlr-2.7.7.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/jboss-logging-3.1.0.GA.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/javassist-3.15.0-GA.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/hibernate-core-4.2.2.Final.jar" />
+  </library>
+  <library name="Spring-4.1.0.RELEASE">
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-aspects-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-aop-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-beans-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-context-support-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-instrument-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-instrument-tomcat-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-expression-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-core-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-context-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-jms-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-messaging-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-oxm-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-orm-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-jdbc-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/aopalliance-1.0.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/commons-logging-1.1.3.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-tx-4.1.0.RELEASE.jar" />
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-test-4.1.0.RELEASE.jar" />
+  </library>
+  <library name="Spring Web Services-2.0.2">
+    <archive path="/home/adminer/inf4990-02/spinal/lib/spring-ws.jar" />
+  </library>
+  <library name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+  <library name="Maven: commons-io:commons-io:1.3.2">
+    <archive path="/root/.m2/repository/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar" />
+  </library>
+</eclipse-userlibraries>
+

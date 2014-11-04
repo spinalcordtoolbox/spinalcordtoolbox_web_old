@@ -1,0 +1,40 @@
+#container-field {
+   margin-left: 40px;
+}
+
+#navigation-field{
+	background-color: #6f9f20;
+    height:600px;
+	width:100%;
+	margin-top: 10px;
+}
+
+#brainbrowser-field{
+	background-color: #6495ed;
+	width:60%;
+    height:700px;
+	margin-left: 25px;
+	margin-top: 45px;
+}
+
+#process-field{
+	background-color: #6f0020;
+    height:600px;
+	width:15%;
+	margin-left: 37px;
+	margin-top: 45px;
+}
+
+#commandline-field{
+	background-color: black;
+	height:100px;
+	width:80%;
+	margin-left:90px;
+	margin-top: 20px;
+}
+
+#footer-field{
+	background-color: blue;
+	margin-top: 20px;
+	width:100%;
+}

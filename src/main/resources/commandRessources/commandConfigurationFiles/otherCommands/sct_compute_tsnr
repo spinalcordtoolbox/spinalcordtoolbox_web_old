@@ -1,0 +1,6 @@
+{
+    "sct_compute_tsnr":{
+        "commandName": "sct_compute_tsnr",
+        "scriptName" : "sct_compute_tsnr.sh"
+    }
+}

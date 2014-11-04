@@ -1,0 +1,286 @@
+{
+    "sct_progseg":{
+        "commandName": "sct_progseg",
+        "scriptName" : "sct_progseg",
+        "parameters":
+            [
+              {
+                "mandatory": {
+                    "-i": {
+                        "description": "Input file name",
+                        "provided_by_user": true,
+                        "defaultValue": "",
+                        "htmlRendering": {
+                            "id": "sct_progseg_i_ID",
+                            "type": "file",
+                            "value": ""
+                        }
+                    },
+                    "-o": {
+                        "description": "Output filename",
+                        "provided_by_user": false,
+                        "defaultValue": "",
+                        "htmlRendering": {
+                            "id": "sct_progseg_o_ID",
+                            "type": "input",
+                            "value": ""
+                        }
+                    },
+                    "-t": {
+                        "description": "Type of image contrast",
+                        "provided_by_user": true,
+                        "defaultValue": "",
+                        "htmlRendering": {
+                            "type": "select",
+                            "items": [
+                                {
+                                    "t1": {
+                                        "value": "Cord bright / CSF dark"
+                                    }
+                                },
+                                {
+                                    "t2": {
+                                        "value": "Cord dark / CSF bright"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+              },
+              {
+                "optional":
+                [
+                    {
+                        "general": {
+                            "-down": {
+                                "description": "Down limit of the propagation",
+                                "defaultValue": 0,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_down_ID",
+                                    "min": "0",
+                                    "max": "9999",
+                                    "step": "1"
+                                }
+                            },
+                            "-up": {
+                                "type": "Int",
+                                "description": "Up limit of the propagation",
+                                "defaultValue": -9999,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_up_ID",
+                                    "min": "0",
+                                    "max": "9999",
+                                    "step": "1"
+                                }
+                            },
+                            "-verbose": {
+                                "type": "Void",
+                                "description": "Up limit of the propagation",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_verbose_ID"
+                                }
+                            },
+                            "help": {
+                                "description": "Help",
+                                "defaultValue": "",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_help_ID"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "output": {
+                            "-mesh": {
+                                "description": "Mesh of the spinal cord segmentation",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_mesh_ID"
+                                }
+                            },
+                            "-centerline-binary": {
+                                "description": "Center line as a binary image",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_centerline_binary_ID"
+                                }
+                            },
+                            "-CSF": {
+                                "description": "CSF segmentation",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_csf_ID"
+                                }
+                            },
+                            "-centerline-coord": {
+                                "description": "Centerline as world coordinates",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_centerline_coord_ID"
+                                }
+                            },
+                            "-cross": {
+                                "description": "cross-sectional areas",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_cross_ID"
+                                }
+                            },
+                            "-init-tube": {
+                                "description": "initial tubular meshes",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_init_tube_ID"
+                                }
+                            },
+                            "-low-resolution-mesh": {
+                                "description": "low-resolution mesh",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_low_resolution_mesh_ID"
+                                }
+                            },
+                            "-detect-display": {
+                                "description": "spinal cord dectection as PNG image",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_detect_display_ID"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "helping": {
+                            "-init-centerline": {
+                                "description": "Filename of centerline to use for the propagation",
+                                "htmlRendering": {
+                                    "type": "file",
+                                    "id": "sct_progseg_init_centerline_ID"
+                                }
+                            },
+                            "-init": {
+                                "description": "Axial slice where the propagation starts",
+                                "defaultValue" : 0.5,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_init_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                }
+                            },
+                            "-init-mask": {
+                                "description": "Mask containing three center of the spinal cord",
+                                "defaultValue" : 0.5,
+                                "htmlRendering": {
+                                    "type": "file",
+                                    "id": "sct_progseg_init_mask_ID"
+                                }
+                            },
+                            "-detect-radius": {
+                                "description": "Approximate radius of the spinal cord",
+                                "defaultValue" : 4,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_detect_radius_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                }
+                            },
+                            "-detect-n": {
+                                "description": "Number of axial slices computed in the detection process",
+                                "defaultValue" : 4,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_detect_n_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                }
+                            },
+                            "-detect-gap": {
+                                "description": "Gap in Z direction for the detection process",
+                                "defaultValue" : 4,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_detect_gap_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                }
+                            },
+                            "-init-validation": {
+                                "description": "Enable validation on spinal cord detection",
+                                "htmlRendering": {
+                                    "type": "checkbox",
+                                    "id": "sct_progseg_init_validation_ID"
+                                }
+                            },
+                            "-nbiter": {
+                                "description": "Number of iteration for the propagation for both direction",
+                                "defaultValue" : 120,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_nbiter_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                }
+                            },
+                            "-max-area": {
+                                "description":  "Maximum cross-sectional area",
+                                "defaultValue" : 120,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_max_area_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                }
+                            },
+                            "-min-contrast": {
+                                "description":  "Minimum local SC/CSF contrast",
+                                "defaultValue" : 50,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_min_contrast_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                }
+                            },
+                            "-max-deformation": {
+                                "description":  "Maximum deformation per iteration",
+                                "defaultValue" : 2.5,
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_max_deformation_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                }
+                            },
+                            "-d": {
+                                "description":  "Trade-off between distance of most promising point and feature strength",
+                                "defaultValue" : "",
+                                "htmlRendering": {
+                                    "type": "int",
+                                    "id": "sct_progseg_d_ID",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                }
+                            }
+                        }
+                    }
+                ]
+              }
+            ]
+    }
+}
