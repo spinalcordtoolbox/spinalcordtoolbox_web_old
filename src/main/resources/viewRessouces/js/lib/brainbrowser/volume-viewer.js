@@ -210,8 +210,8 @@
   /**
   * @doc function
   * @name VolumeViewer.static methods:start
-  * @param {string} element_id ID of the DOM element
-  * in which the viewer will be inserted.
+  * @param {string} element ID of a DOM element, or the DOM element itself, 
+  * into which the viewer will be inserted.
   * @param {function} callback Callback function to which the viewer object
   * will be passed after creation.
   * @description
@@ -271,7 +271,7 @@
   * });
   * ```
   */
-  VolumeViewer.start = function(element_id, callback) {
+  VolumeViewer.start = function(element, callback) {
     
     /**
     * @doc object
@@ -304,8 +304,18 @@
     *
     * ```
     */
+
+    // Element where the viewer canvases will be loaded.
+    var dom_element;
+    
+    if (typeof element === "string") {
+      dom_element = document.getElementById(element);
+    } else {
+      dom_element = element;
+    }
+
     var viewer = {
-      dom_element: document.getElementById(element_id),
+      dom_element: dom_element,
       volumes: [],
       synced: false
     };
@@ -426,8 +436,6 @@
         var axis_name = panel.axis;
 
         var key = event.which;
-        var axis_num = VolumeViewer.utils.axis_to_number[axis_name];
-        
         var space_name, time;
         var cursor;
         
@@ -493,7 +501,7 @@
               var synced_panel;
               
               if (synced_volume !== volume) {
-                synced_panel = synced_volume.display[axis_num];
+                synced_panel = synced_volume.display.getPanel(axis_name);
                 synced_panel.updateVolumePosition(cursor.x, cursor.y);
                 synced_volume.display.forEach(function(panel) {
                   if (panel !== synced_panel) {

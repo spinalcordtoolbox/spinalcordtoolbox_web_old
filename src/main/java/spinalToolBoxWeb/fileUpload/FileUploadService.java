@@ -21,7 +21,8 @@ public class FileUploadService {
 
     public FileUploadService(){};
 
-    public void uploadFile(MultipartFile file){
-        fileuploadController.uploadFile(file);
+    public boolean uploadFile(MultipartFile file, String token)
+    {
+        return fileuploadController.uploadFile(file, token);
     }
 }

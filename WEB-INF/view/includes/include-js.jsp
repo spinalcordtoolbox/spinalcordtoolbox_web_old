@@ -9,72 +9,55 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<script src="<c:url value="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"/>"></script>
+<script src="<c:url value="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/command/command.js" var="commandUrl" />
-<script src="${commandUrl}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/command/command.js"/>" type="text/javascript"></script>
 
+<script src="<spring:url value="/resources/viewRessouces/js/commandsInputGenerator/appFetchJson.js"/>" type="text/javascript"></script>
 
+<script src="<spring:url value="/resources/viewRessouces/js/upload/upload.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/examples/js/jquery-1.6.4.min.js" var="jq" />
-<script src ="${jq}"></script>
+<script src="<spring:url value="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/examples/js/jquery-ui-1.8.10.custom.min.js" var="jqui" />
-<script src="${jqui}"></script>
+<script src="<spring:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/examples/js/ui.js" var="uilol" />
-<script src="${uilol}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/examples/js/jquery-ui-1.8.10.custom.min.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/brainbrowser.js" var="brainbrowserjs" />
-<script src="${brainbrowserjs}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/examples/js/ui.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/core/tree-store.js" var="treestore" />
-<script src="${treestore}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/brainbrowser.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/config.js" var="config" />
-<script src="${config}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/core/tree-store.js"  />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/utils.js" var="utils" />
-<script src="${utils}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/config.js"  />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/events.js" var="events" />
-<script src="${events}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/utils.js"  />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/loader.js" var="loader" />
-<script src="${loader}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/events.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/color-map.js" var="colormap" />
-<script src="${colormap}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/loader.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer.js" var="volumeviewer" />
-<script src="${volumeviewer}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/lib/color-map.js"  />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/lib/display.js" var="display" />
-<script src="${display}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/lib/panel.js" var="panel" />
-<script src="${panel}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/lib/display.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/lib/utils.js" var="utilss" />
-<script src="${utilss}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/lib/panel.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/modules/loading.js" var="loading" />
-<script src="${loading}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/lib/utils.js"/>" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/modules/rendering.js" var="rendering" />
-<script src="${rendering}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/modules/loading.js" />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/volume-loaders/overlay.js" var="overlay" />
-<script src="${overlay}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/modules/rendering.js"  />" type="text/javascript"></script>
 
-<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/volume-loaders/minc.js" var="minc" />
-<script src="${minc}"></script>
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/volume-loaders/overlay.js" />" type="text/javascript"></script>
+
+<script src="<spring:url value="/resources/viewRessouces/js/lib/brainbrowser/volume-viewer/volume-loaders/minc.js" />" type="text/javascript"></script>
+
+<script src="<spring:url value="/resources/viewRessouces/js/lib/examples/volume-viewer-demo.config.js" />" type="text/javascript"></script>
+
+<script src="<spring:url value="/resources/viewRessouces/js/lib/examples/volume-viewer-demo.js" />" type="text/javascript"></script>
 
 
-<spring:url value="/resources/viewRessouces/js/lib/examples/volume-viewer-demo.config.js" var="volumeviewerdemoconfig" />
-<script src="${volumeviewerdemoconfig}"></script>
-
-
-<spring:url value="/resources/viewRessouces/js/lib/examples/volume-viewer-demo.js" var="volumeviewerdemo" />
-<script src="${volumeviewerdemo}"></script>
 

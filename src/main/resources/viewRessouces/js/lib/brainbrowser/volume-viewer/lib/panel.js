@@ -158,6 +158,8 @@
         y: 0
       },
       zoom: 1,
+      contrast: 1,
+      brightness: 0,
       updated: true,
       /**
       * @doc function
@@ -336,6 +338,18 @@
         }, 0);
       },
 
+      /**
+      * @doc function
+      * @name panel.panel:draw
+      * @param {string} cursor_color The color of the cursor.
+      * @param {boolean} active Whether this panel is active or not (i.e.
+      * highlighted in red).
+      * @description
+      * Draw the current slice to the canvas.
+      * ```js
+      * panel.draw();
+      * ```
+      */
       draw: function(cursor_color, active) {
         var cursor = panel.getCursorPosition();
 
@@ -409,7 +423,6 @@
     }
 
     if (panel.volume) {
-      panel.propagateEventTo("*", panel.volume);
       setSlice(panel, panel.volume.slice(panel.axis));
     }
 
@@ -423,7 +436,7 @@
   // Set the volume slice to be rendered on the panel.
   function setSlice(panel, slice) {
     panel.slice = slice;
-    panel.slice_image = panel.slice.getImage(panel.zoom);
+    panel.slice_image = panel.slice.getImage(panel.zoom, panel.contrast, panel.brightness);
   }
 
   // Draw the cursor at its current position on the canvas.

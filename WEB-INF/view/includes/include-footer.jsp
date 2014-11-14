@@ -6,13 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 
+<footer>
 
-<div id="footer">
-    <div id='footer-field' class="container">
-        <br /><br />
-        <p class="muted credit">NeuroPoly-SpinalCord Toolbox 2014 &copy;<a href="TODO">Polymtl</a>.</p>
+    <div id="footer" class="footer">
+        <div id='footer-field' class="container-fluid">
+            <br /><br />
+            <p class="muted credit">NeuroPoly-SpinalCord Toolbox 2014 &copy;<a href="#">Polymtl</a>.</p>
+        </div>
     </div>
-</div>
+
+</footer>
+
+
+<%@ include file="include-js.jsp" %>
+
 </body>
 
 </html>

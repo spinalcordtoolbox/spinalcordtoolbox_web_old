@@ -125,10 +125,12 @@
 *   shapes: [
 *     {
 *       name: "...",
+*       color: [...],
 *       indices: [...]  
 *     },
 *     {
 *       name: "...",
+*       color: [...],
 *       indices: [...]  
 *     }
 *   ]
@@ -148,8 +150,9 @@
 *   provided, the Surface Viewer will attempt to appoximate the normals based 
 *   on the vertex data.
 * * **colors** (optional) is a flat array of **r**, **g**, **b**, **a** color 
-*   values. Size: n X 4. If no color data is provided vertex colors will all 
-*   be set to gray.
+*   values. Size: **n** X 4 or 4. If a 4-element array is given, that color
+*   will be used for the entire model. If no color data is provided vertex 
+*   colors will all be set to gray.
 * * **shapes** is an array containing objects describing the different 
 *   shapes the model represents. Each object will contain an **indices**
 *   property which contains an array of indices pointing into the 
@@ -157,9 +160,13 @@
 *   assemble them into triangles or line pieces. For **polygon** models,
 *   each triplet of indices should describe a triangle. For **line** models,
 *   each pair of indices should describe a line segment. Optionally, each
-*   shape can also be given a **name** property that identifies it. If none is 
-*   provided, the **name** property defaults to a value based on the name 
-*   of the file that contained the model and the shape's index number.   
+*   shape can also be given a **color** property, which indicates the color
+*   of the shape (overriding model and vertex colors at the top level). The
+*   color should be given as a 4-element array indicating **r**, **g**, **b**, 
+*   **a** color values. An optional **name** property can also be given to 
+*   identify the shape. If no **name** is provided, the **name** property 
+*   defaults to a value based on the name of the file that contained the model 
+*   and the shape's index number.   
 */
 (function() {
   "use strict";
@@ -167,40 +174,40 @@
   var SurfaceViewer = BrainBrowser.SurfaceViewer = {
 
     /**
-    *  @doc function
-    *  @name SurfaceViewer.static methods:start
-    *  @param {string} element_id ID of the DOM element 
-    *  in which the viewer will be inserted.
-    *  @param {function} callback Callback function to which the viewer object
-    *  will be passed after creation.
-    *  @description
-    *  The start() function is the main point of entry to the Surface Viewer.
-    *  It creates a viewer object that is then passed to the callback function 
-    *  supplied by the user.
+    * @doc function
+    * @name SurfaceViewer.static methods:start
+    * @param {string} element ID of a DOM element, or the DOM element itself, 
+    * into which the viewer will be inserted.
+    * @param {function} callback Callback function to which the viewer object
+    * will be passed after creation.
+    * @description
+    * The start() function is the main point of entry to the Surface Viewer.
+    * It creates a viewer object that is then passed to the callback function 
+    * supplied by the user.
     *
-    *  ```js
-    *    BrainBrowser.SurfaceViewer.start("brainbrowser", function(viewer) {
+    * ```js
+    *   BrainBrowser.SurfaceViewer.start("brainbrowser", function(viewer) {
+    *     
+    *     //Add an event listener.
+    *     viewer.addEventListener("displaymodel", function(model) {
+    *       console.log("We have a model!");
+    *     });
+    *
+    *     // Start rendering the scene.
+    *     viewer.render();
+    *
+    *     // Load a model into the scene.
+    *     viewer.loadModelFromURL("/models/brain_surface.obj");
     *      
-    *      //Add an event listener.
-    *      viewer.addEventListener("displaymodel", function(model) {
-    *        console.log("We have a model!");
-    *      });
+    *     // Hook viewer behaviour into UI.
+    *     $("#wireframe").change(function(e) {
+    *       viewer.setWireframe($(this).is(":checked"));
+    *     });
     *
-    *      // Start rendering the scene.
-    *      viewer.render();
-    *
-    *      // Load a model into the scene.
-    *      viewer.loadModelFromURL("/models/brain_surface.obj");
-    *       
-    *      // Hook viewer behaviour into UI.
-    *      $("#wireframe").change(function(e) {
-    *        viewer.setWireframe($(this).is(":checked"));
-    *      });
-    *
-    *    });
-    *  ```
+    *   });
+    * ```
     */
-    start: function(element_id, callback) {
+    start: function(element, callback) {
 
       console.log("BrainBrowser Surface Viewer v" + BrainBrowser.version);
 
@@ -264,7 +271,15 @@
       */
 
       var attributes = {};
-      var dom_element = document.getElementById(element_id); // Element where the viewer canvas will be loaded.
+
+      // Element where the viewer canvas will be loaded.
+      var dom_element;
+
+      if (typeof element === "string") {
+        dom_element = document.getElementById(element);
+      } else {
+        dom_element = element;
+      }
 
       var viewer = {
         dom_element: dom_element,

@@ -14,19 +14,18 @@ app.controller("formCtrl", function($scope, $http) {
     $scope.myForm.submitTheForm = function() {
 
         console.log("--> Submitting form");
-        $scope.dataObject = {
-            command : $scope.myForm.command
-        };
-        var data = 'command='+    $scope.myForm.command;
-        var responsePromise = $http.post("/command",data, {});
-
-        responsePromise.success(function(dataFromServer, status, headers, config) {
-            console.log("server ok");
-        });
-        responsePromise.error(function(data, status, headers, config) {
-            console.log("Submitting form failed!");
-        });
+    $scope.dataObject = {
+        command : $scope.myForm.command
+    };
+    var data = 'command='+    $scope.myForm.command;
+    var responsePromise = $http.post("/command",data, {});
+    responsePromise.success(function(dataFromServer, status, headers, config) {
+    console.log("server ok");
+    });
+    responsePromise.error(function(data, status, headers, config) {
+    console.log("Submitting form failed!");
+    });
     }
 
-});
+    });
 

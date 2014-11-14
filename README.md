@@ -1,2 +1,0 @@
-spinalcordtoolbox_web
-=====================

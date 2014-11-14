@@ -2,7 +2,7 @@
 * BrainBrowser: Web-based Neurological Visualization Tools
 * (https://brainbrowser.cbrain.mcgill.ca)
 *
-* Copyright (C) 2011
+* Copyright (C) 2011 
 * The Royal Institution for the Advancement of Learning
 * McGill University
 *
@@ -25,149 +25,135 @@
 */
 
 body {
-    background-color: #000000;
+  background-color: #e2e2e2;
 }
 
 #brainbrowser-wrapper {
-    width: 65em;
-    margin: 50px auto;
+  margin: 50px auto;
 }
 
 #volume-viewer {
-    display: inline-block;
-    background-color: #FFFFFF;
-    padding: 0.5em;
-    border-radius: 10px;
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 10px;
 }
 
 
 .volume-container {
-    display: table-cell;
+  display: table-cell;
 }
 
 canvas.slice-display {
-    display: block;
-    margin: 3px 5px;
-    float: left;
+  display: block;
+  margin: 3px 5px;
+  float: left;
 }
 
 .volume-viewer-controls {
-    font-size: 12px;
-    padding: 10px;
-    margin: 3px 5px;
-    background: #555555;
-    color: #F0F0F0;
-    float: right;
+  font-size: 12px;
+  padding: 10px;
+  margin-top: 3px;
+  background: #555555;
 }
 
 .volume-viewer-controls > div {
-    margin-bottom: 10px;
-}
-
-.volume-controls {
-    width: 250px;
-    height: 705px;
+  margin-bottom: 10px;
 }
 
 #global-controls {
-    -moz-border-radius: 10px 10px 0 0;
-    -webkit-border-radius: 10px 10px 0 0;
-    border-radius: 10px 10px 0 0;
-    padding-bottom: 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 0;
 }
 
 #global-controls .instructions {
-    padding: 10px 0 5px 0;
+  padding: 10px 0 5px 0;
 }
 
 .control-heading {
-    font-size: 14px;
-    font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .control-heading:not(:first-child) {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 .control-inputs {
-    border: none;
-    padding: 2px;
-    margin-left: 10px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -moz-box-shadow: 1px 1px 0px 0px #787878;
-    -webkit-box-shadow: 1px 1px 0px 0px #787878;
-    box-shadow: 1px 1px 0px 0px #787878;
-    width: 2em;
+  border: none;
+  padding: 2px;
+  margin-right: 10px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 1px 1px 0px 0px #787878;
+  -webkit-box-shadow: 1px 1px 0px 0px #787878;
+  box-shadow: 1px 1px 0px 0px #787878;
+  width: 2em;
 }
 
 .coords .control-inputs {
-    margin-right: 0.6em;
-    width: 40px;
-    font-size: 10px;
+  margin-right: 0.6em;
+  width: 40px;
+  font-size: 10px;
 }
 
 .volume-viewer-threshold, .volume-viewer-blend {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
 .ui-slider .ui-slider-handle .ui-state-default .ui-corner-all {
-    color: #777777 !important;
-    font-size: 10px;
-    padding: 3px;
-    text-shadow: 0 1px 0 #FFFFFF;
-    text-decoration:none;
+  color: #777777 !important;
+  font-size: 10px;
+  padding: 3px;
+  text-shadow: 0 1px 0 #FFFFFF;
+  text-decoration:none;
 }
 
 .slider {
-    margin-top: 1.5em!important;
-    margin-bottom: 1em!important;
+  margin-top: 1.5em!important;
+  margin-bottom: 1em!important;
 }
 
 .thresh-inputs {
-    position: relative;
-    height: 1em;
+  position: relative;
+  height: 1em;
 }
 
 .thresh-input-left {
-    position: absolute;
-    left: 3px;
+  position: absolute;
+  left: 3px;
 }
 
 .thresh-input-right {
-    position: absolute;
-    right: 10px;
+  position: absolute;
+  right: 10px;
 }
 
 .slice-series-button {
-    font-size: 11px;
+  font-size: 11px;
 }
 
 #volume-file {
-    margin-top: 12px;
-    margin-bottom: 10px;
-    display: none;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  display: none;
 }
 
 #volume-file-submit {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 #volume-file-hint {
-    margin: 4px;
+  margin: 4px;
 }
 
 #volume-file-hint a {
-    color: orange;
+  color: orange;
 }
 
 .intensity-value {
-    padding: 1px;
-}
-
-.volume-viewer-display {
-    float:left;
-    width: 620px;
+  padding: 1px;
 }

@@ -12,12 +12,10 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
 
-    <title>SpinalTooBoxWeb</title>
+    <title>SpinalCordTooBoxWeb</title>
 
     <%@ include file="include-css.jsp" %>
-    <%@ include file="include-js.jsp" %>
-
 
 </head>
-<body>
+<body ng-app = "appFetchJson">
 

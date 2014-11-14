@@ -1,0 +1,17 @@
+[
+  { 
+	"id"   :  "text1",
+    "type" :  "text",
+    "val"  :  "input1"
+  },
+  { 
+    "id"   :  "text2",
+    "type" :  "text",
+    "val"  :  "input2"
+  },
+  { 
+    "id"   : "checkbox1",
+    "type" : "checkbox",
+    "val"  :  "input3"
+  }
+]

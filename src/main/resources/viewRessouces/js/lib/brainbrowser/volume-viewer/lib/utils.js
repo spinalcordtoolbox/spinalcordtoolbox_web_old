@@ -30,27 +30,6 @@
 
   BrainBrowser.VolumeViewer.utils = {
     /**
-    * @doc object
-    * @name VolumeViewer.utils.axis_to_number
-    *
-    * @property {number} xspace Index of x space (0)
-    * @property {number} yspace Index of y space (1)
-    * @property {number} zspace Index of z space (2)
-    *
-    * @description
-    * Convenience object for converting between space names
-    * and indices.
-    * ```js
-    * BrainBrowser.VolumeViewer.utils.axis_to_number["xspace"];
-    * ```
-    */
-    axis_to_number: {
-      xspace: 0,
-      yspace: 1,
-      zspace: 2
-    },
-
-    /**
     * @doc function
     * @name VolumeViewer.utils.nearestNeighbor
     *
@@ -111,7 +90,7 @@
 
     /**
     * @doc function
-    * @name VolumeViewer.utils.flipImage
+    * @name VolumeViewer.utils.flipArray
     *
     * @param {array} source Source image data.
     * @param {number} width Width of source image.
@@ -120,28 +99,33 @@
     * * **flipx** Whether or not to flip along the x axis (default: false). 
     * * **flipy** Whether or not to flip along the y axis (default: false). 
     * * **block_size** The size of each unit for scaling (default: 1). 
-    * * **ArrayType** Constructor for the result array type (default: Uint8ClampedArray). 
     * 
     * @returns {array} The flipped image array.
     *
     * @description
     * Flip an image array along either the x or y axis.
     * ```js
-    * BrainBrowser.VolumeViewer.utils.flipImage(image_data, 256, 256, { flipx: true });
+    * BrainBrowser.VolumeViewer.utils.flipArray(image_data, 256, 256, { flipx: true });
     * ```
     */
-    flipImage: function(source, width, height, options) {
+    flipArray: function(source, width, height, options) {
       options = options || {};
 
       var flipx = options.flipx || false;
       var flipy = options.flipy || false;
       var block_size = options.block_size || 1;
-      var ArrayType = options.array_type || Uint8ClampedArray;
-      var target = new ArrayType(width * height * block_size);
+      var target = new source.constructor(source.length);
       var i, j, k;
       var x, y;
       var target_row_offset, target_offset;
       var source_row_offset, source_offset;
+
+      if (!flipx && !flipy) {
+        for (i = 0, j = source.length; i < j; i++) {
+          target[i] = source[i];
+        }
+        return target;
+      }
 
       for (j = 0; j < height; j++) {
         target_row_offset = j * width;
@@ -160,64 +144,8 @@
       }
       
       return target;
-    },
-
-    /**
-    * @doc function
-    * @name VolumeViewer.utils.rotateUint16Array90Left
-    *
-    * @param {Uint16Array} array The array to rotate
-    * @param {number} width Width of the 2D interpretation of the array
-    * @param {number} height Height of the 2D interpretation of the array
-    * @returns {Uint16Array} The rotated array.
-    *
-    * @description
-    * Rotate an array to the left based on a width X height 2D interpretation 
-    * of the array data.
-    * ```js
-    * BrainBrowser.VolumeViewer.utils.rotateUint16Array90Left(array, 512, 512);
-    * ```
-    */
-    rotateUint16Array90Left: function(array, width, height){
-      var new_array = new Uint16Array(width * height);
-      var i, j;
-      
-      for (i = 0; i < width; i++) {
-        for (j = 0; j < height; j++) {
-          new_array[i * height + j] = array[j * width + (width - i)];
-        }
-      }
-
-      return new_array;
-    },
-    
-    /**
-    * @doc function
-    * @name VolumeViewer.utils.rotateUint16Array90Right
-    *
-    * @param {Uint16Array} array The array to rotate
-    * @param {number} width Width of the 2D interpretation of the array
-    * @param {number} height Height of the 2D interpretation of the array
-    * @returns {Uint16Array} The rotated array.
-    *
-    * @description
-    * Rotate an array to the right based on a width X height 2D interpretation 
-    * of the array data.
-    * ```js
-    * BrainBrowser.VolumeViewer.utils.rotateUint16Array90Right(array, 512, 512);
-    * ```
-    */
-    rotateUint16Array90Right: function(array, width, height){
-      var new_array = new Uint16Array(width * height);
-      var i, j;
-
-      for (i = 0; i < width; i++) {
-        for (j = 0; j < height; j++) {
-          new_array[i * height + j] = array[(height - j) * width + i];
-        }
-      }
-      return new_array;
     }
+    
   };
     
 })();

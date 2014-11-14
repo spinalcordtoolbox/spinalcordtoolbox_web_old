@@ -1,0 +1,221 @@
+[
+    {
+        "commandName": "sct_register_multimodal",
+        "scriptName" : "sct_register_multimodal",
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "MANDATORY ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-i",
+                                "id"           : "sct_register_multimodal_i_ID",
+                                "description"  : "source image",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "source image"                               
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "true"
+                            },
+							{
+                                "command"      : "-d",
+                                "id"           : "sct_register_multimodal_d_ID",
+                                "description"  : "destination image",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "source image"                               
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "true"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "GENERAL OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-s",
+                                "id"           : "sct_register_multimodal_s_ID",
+                                "description"  : "segmentation for source image (mandatory if -t is used)",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "segmentation for source image" 
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-t",
+                                "id"           : "sct_register_multimodal_t_ID",
+                                "description"  : "segmentation for destination image (mandatory if -s is used)",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "segmentation for destination image" 
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-q",
+                                "id"           : "sct_register_multimodal_q_ID",
+                                "description"  : "transformation file (ITK-based) to apply to source image before registration. Default=none",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "transformation file" 
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-z",
+                                "id"           : "sct_register_multimodal_z_ID",
+                                "description"  : "inverse transformation file to obtain warp_dest2src deformation field N.B. Only use this flag with -q and -x",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "inverse transformation file" 
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "false"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OUTPUT OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-o",
+                                "id"           : "sct_register_multimodal_o_ID",
+                                "description"  : "name of output file. Default=source_reg",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : " output file"
+                                },
+                                "defaultValue" : "source_reg",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-n",
+                                "id"           : "sct_register_multimodal_n_ID",
+                                "description"  : "number of iterations for first and second stage. Default=15x3",
+                                "HTMLRendering"	:
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "number of iterations",
+                                    "min"         : "1",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "defaultValue" : "45",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-y",
+                                "id"           : "sct_register_multimodal_y_ID",
+                                "description"  : "number of iterations at step 2 (if using segmentation). Set 0 to register based on segmentation only. Default=10",
+                                "HTMLRendering"	:
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "number of iterations",
+                                    "min"         : "1",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "defaultValue" : "10",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-g",
+                                "id"           : "sct_register_multimodal_g_ID",
+                                "description"  : "gradientStep for SyN transformation. The larger the more deformation.If you use a segmentation, you can specify gradientStep for each step as follow: val1,val2 (val1: image, val2: seg).",
+                                "HTMLRendering"	:
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "val1 image",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.1",
+									"HTMLType"    : "number",
+                                    "Title"       : "val2 seg",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "defaultValue1" : "0.2",
+								"defaultValue2" : "0.5",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-p",
+                                "id"           : "sct_register_multimodal_p_ID",
+                                "description"  : "size of padding (top & bottom), to enable deformation at edges. Default=3",
+                                "HTMLRendering"	:
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "size of padding ",
+                                    "min"         : "1",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "defaultValue" : "3",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command": "-r",
+								"id": "sct_register_multimodal_r_ID",
+								"description": "remove temporary files. Default='+str(param.remove_temp_files)+'",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "remove temp files",
+									"selectList": [
+										{
+											"value": "1",
+											"commandValue": "1"
+										},
+										{
+											"value": "0",
+											"commandValue": "0"
+										}
+									]
+								},
+								"defaultValue": "+str(param.remove_temp_files)+",
+								"mandatory": "false"
+                            },
+                            {
+								"command": "-v",
+								"id": "sct_register_multimodal_v_ID",
+								"description": "verbose. Default=0",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "verbose",
+									"selectList": [
+										{
+											"value": "1",
+											"commandValue": "1"
+										},
+										{
+											"value": "0",
+											"commandValue": "0"
+										}
+									]
+								},
+								"defaultValue": "0",
+								"mandatory": "false"
+                            }
+                        ]
+                }
+     
+            ]
+    }
+]
+ 
