@@ -1,0 +1,106 @@
+[
+    {
+        "commandName": "sct_crop_image",
+        "scriptName" : "sct_crop_image",
+        "additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "AVAILABLE OPTIONS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-m",
+                                "id"           : "sct_crop_image_m_ID",
+                                "description"  : "Binary image containing start and end slices, no default ; if mask not provided, the image is really cropped",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "Binary image"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-start",
+                                "id"           : "sct_crop_image_start_ID",
+                                "description"  : "Start slice to crop, 0.5 if middle slice",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Start slice to crop",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-end",
+                                "id"           : "sct_crop_image_end_ID",
+                                "description"  : "End slice to crop, 0.5 if middle slice, -1 if last slice",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "End slice to crop",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-dim",
+                                "id"           : "sct_crop_image_dim_ID",
+                                "description"  : "Dimension to crop, default is 1",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Dimension to crop",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-b",
+                                "id"           : "sct_crop_image_b_ID",
+                                "description"  : "Background value, default is 0.0",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Background value",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-mesh",
+                                "id"           : "sct_crop_image_mesh_ID",
+                                "description"  : "Mesh to crop",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "Mesh to crop"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-help",
+                                "id"           : "sct_propseg_help_ID",
+                                "description"  : "Help",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Help"
+                                },
+                                "mandatory"   : "false"
+                            }
+						]
+                }
+            ]
+    }
+]
+ 

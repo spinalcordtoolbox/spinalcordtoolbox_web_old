@@ -1,0 +1,117 @@
+[
+    {
+        "commandName": "sct_spinalCordDetection",
+        "scriptName" : "sct_spinalCordDetection",
+        "additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "AVAILABLE OPTIONS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-t",
+                                "id"           : "sct_spinalCordDetection_t_ID",
+                                "description"  : "string, type of image contrast, default is t2",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "select",
+                                    "Title"       : "Type of image contrast",
+                                    "selectList"  :
+                                        [
+                                            {
+                                                "value"       : "t2",
+                                                "commandValue": "t2"
+                                            },
+                                            {
+                                                "value"       : "t1",
+                                                "commandValue": "t1"
+                                            }
+                                        ]
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-n",
+                                "id"           : "sct_spinalCordDetection_n_ID",
+                                "description"  : "int, number of slices around slice to analyze, default is 5",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Number of slice",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-s",
+                                "id"           : "sct_spinalCordDetection_s_ID",
+                                "description"  : "int, slice in axial direction to analyze, default use middle slice",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Slice in axial direction",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-gap",
+                                "id"           : "sct_spinalCordDetection_gap_ID",
+                                "description"  : "int, gap between slices to analyze, default is 1",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Gap between slices",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-r",
+                                "id"           : "sct_spinalCordDetection_r_ID",
+                                "description"  : "double, average radius of spinal cord, default is 4.0 mm",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Average radius",
+                                    "min"         : "-9999",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-v",
+                                "id"           : "sct_spinalCordDetection_v_ID",
+                                "description"  : "Display option",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Display option"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-help",
+                                "id"           : "sct_spinalCordDetection_help_ID",
+                                "description"  : "Help",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Help"
+                                },
+                                "mandatory"   : "false"
+                            }
+						]
+                }
+            ]
+    }
+]
+ 

@@ -1,0 +1,135 @@
+[
+    {
+        "commandName": "sct_extract_metric",
+        "scriptName" : "sct_extract_metric",
+        "additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "MANDATORY ARGUMENTS",
+                    "parameters" :
+                        [
+							{
+                                "command"      : "-i",
+                                "id"           : "sct_extract_metric_i_ID",
+                                "description"  : "file to extract metrics from",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "file to extract metric from"
+                                },
+                                "mandatory"   : "true"
+                            },
+                            {
+                                "command"      : "-f",
+                                "id"           : "sct_extract_metric_f_ID",
+                                "description"  : "label to extract the metric from.",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "filelist",
+                                    "Title"       : "label"                                  
+                                },
+                                "mandatory"   : "false"
+                            }							
+                        ]
+                },
+                {
+                    "argumentsSection" : "OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-l",
+                                "id"           : "sct_extract_metric_l_ID",
+                                "description"  : "Label number to extract the metric from. Example: 1,3 for left fasciculus cuneatus and left ventral spinocerebellar tract in folder '/atlas'.",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Label number",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0,1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-m",
+                                "id"           : "sct_extract_metric_m_ID",
+                                "description"  : "method to extract metrics. options : ml for maximum likelihood, wa or wath for weighted average , bin for binarize mask",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "select",
+                                    "Title"       : " extract metrics",
+									"selectList"  :
+									 [
+									                                            {
+									                                                "value"       : "maximum likelihood",
+									                                                "commandValue": "ml"
+									                                            },
+									                                            {
+									                                                "value"       : "weighted average",
+									                                                "commandValue": "wa"
+									                                            },
+																				{
+																			
+									                                                "value"       : "weighted average (val > 0,5)",
+									                                                "commandValue": "wath"
+									                                            },
+									                                            {
+									                                                "value"       : "binarize mask",
+									                                                "commandValue": "bin"
+									                                            }
+									 ]
+									                              
+                                },
+                                "mandatory"   : "wath"
+                            },
+							{
+                                "command"      : "-a",
+                                "id"           : "sct_extract_metric_a_ID",
+                                "description"  : " average all selected labels.",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"        : " average labels"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-v",
+                                "id"           : "sct_extract_metric_v_ID",
+                                "description"  : "Vertebral levels to estimate the metric across",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "text",
+									"Title"       : "Vertebral levels"
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command"      : "-z",
+                                "id"           : "sct_extract_metric_z_ID",
+                                "description"  : "Slice range to estimate the metric from. First slice is 0. Example: 5:23. You can also select specific slices using commas. Example: 0,2,3,5,12",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "text",
+									"Title"       : "slice range"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-h",
+                                "id"           : "sct_extract_metric_help_ID",
+                                "description"  : "Help",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Help"
+                                },
+                                "mandatory"   : "false"
+                            }
+                        ]
+                }
+            ]
+    }
+]
+ 

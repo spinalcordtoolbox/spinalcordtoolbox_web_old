@@ -1,0 +1,365 @@
+[
+    {
+        "commandName": "sct_propseg",
+        "scriptName" : "sct_propseg",
+        "additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "MANDATORY ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-i",
+                                "id"           : "sct_propseg_i_ID",
+                                "description"  : "string, no default",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "string, no default"
+                                },
+                                "mandatory"   : "true"
+                            },
+                            {
+                                "command"      : "-t",
+                                "id"           : "sct_propseg_t_ID",
+                                "description"  : "string, type of image contrast, t2: cord dark / CSF bright ; t1: cord bright / CSF dark, no default",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "select",
+                                    "Title"       : "Type of image contrast",
+                                    "selectList"  :
+                                        [
+                                            {
+                                                "value"       : "t1",
+                                                "commandValue": "t1"
+                                            },
+                                            {
+                                                "value"       : "t2",
+                                                "commandValue": "t2"
+                                            }
+                                        ]
+                                },
+                                "mandatory"   : "true"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-down",
+                                "id"           : "sct_propseg_down_ID",
+                                "description"  : "int, down limit of the propagation, default is 0",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Down limit of the propagation",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-up",
+                                "id"           : "sct_propseg_up_ID",
+                                "description"  : "int, up limit of the propagation, default is the higher slice of the image",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Up limit of the propagation",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-verbose",
+                                "id"           : "sct_propseg_verbose_ID",
+                                "description"  : "display on",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Display on"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-help",
+                                "id"           : "sct_propseg_help_ID",
+                                "description"  : "Help",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Help"
+                                },
+                                "mandatory"   : "false"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OUTPUT OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-mesh",
+                                "id"           : "sct_propseg_mesh_ID",
+                                "description"  : "output: mesh of the spinal cord segmentation",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Mesh of the segmentation"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-centerline-binary",
+                                "id"           : "sct_propseg_centerline_binary_ID",
+                                "description"  : "output: centerline as a binary image",
+                                "HTMLRendering"	:
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Centerline as binary image"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-CFS",
+                                "id"           : "sct_propseg_cfs_ID",
+                                "description"  : "output: CSF segmentation",
+                                "HTMLRendering":
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "CSF segmentation"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-centerline-coord",
+                                "id"           : "sct_propseg_centerline_coord_ID",
+                                "description"  : "output: centerline as world coordinates",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Centerline as world coordinates"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-cross",
+                                "id"           : "sct_propseg_cross_ID",
+                                "description"  : "output: cross-sectional areas",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Cross-sectional areas"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-init-tube",
+                                "id"           : "sct_propseg_init_tube_ID",
+                                "description"  : "output: initial tubular meshes",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "initial tubular meshes"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-low-resolution-mesh",
+                                "id"           : "sct_propseg_low_resolution_mesh_ID",
+                                "description"  : "output: low-resolution mesh",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Low-resolution mesh"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-detect-display",
+                                "id"           : "sct_propseg_detect_display_ID",
+                                "description"  : "Output of spinal cord detection as a PNG image",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "PNG image"
+                                },
+                                "mandatory"   : "false"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OPTIONAL OPTIONS HELPING SEGMENTATION",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-init-centerline",
+                                "id"           : "sct_propseg_init_centerline_ID",
+                                "description"  : "string, filename of centerline to use for the propagation, format .txt or .nii, see file structure in documentation",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "Filename of centerline"
+                                },
+                                "defaultValue" : "",
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-init",
+                                "id"           : "sct_propseg_init_ID",
+                                "description"  : "int, axial slice where the propagation starts, default is middle axial slice (0.5)",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Axial slice",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "init-mask",
+                                "id"           : "sct_propseg_init_mask_ID",
+                                "description"  : "string, mask containing three center of the spinal cord, used to initiate the propagation",
+                                "HTMLRendering":
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "Mask"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-detect-radius",
+                                "id"           : "sct_propseg_detect_radius_ID",
+                                "description"  : "double, approximate radius of the spinal cord, default is 4 mm",
+                                "HTMLRendering":
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Radius of the spinal cord",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-detect-n",
+                                "id"           : "sct_propseg_detect_n_ID",
+                                "description"  : "int, number of axial slices computed in the detection process, default is 4",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Number of axial slices",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "detect-gap",
+                                "id"           : "sct_propseg_detect_gap_ID",
+                                "description"  : "int, gap in Z direction for the detection process, default is 4",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Gap in Z direction",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-init-validation",
+                                "id"           : "sct_propseg_init_validation_ID",
+                                "description"  : "enable validation on spinal cord detection based on discriminant analysis",
+                                "HTMLRendering":
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Enable validation on spinal cord detection"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-nbiter",
+                                "id"           : "sct_propseg_nbiter_ID",
+                                "description"  : "int, stop condition: number of iteration for the propagation for both direction, default is 200",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Number of iteration for the propagation",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-max-area",
+                                "id"           : "sct_propseg_max_area_ID",
+                                "description"  : "double, in mm^2, stop condition: maximum cross-sectional area, default is 120 mm^2",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Maximum cross-sectional area",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "max-deformation",
+                                "id"           : "sct_propseg_max_deformation_ID",
+                                "description"  : "double, in mm, stop condition: maximum deformation per iteration, default is 2.5 mm",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Maximum deformation",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-min-contrast",
+                                "id"           : "sct_propseg_min_contrast_ID",
+                                "description"  : "double, in intensity value, stop condition: minimum local SC/CSF contrast, default is 50",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Minimum local SC/CSF contrast",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-d",
+                                "id"           : "sct_propseg_d_ID",
+                                "description"  : "double, trade-off between distance of most promising point and feature strength, default depend on the contrast",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Trade-off",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "0.01"
+                                },
+                                "mandatory"   : "false"
+                            }
+                        ]
+                }
+            ]
+    }
+]

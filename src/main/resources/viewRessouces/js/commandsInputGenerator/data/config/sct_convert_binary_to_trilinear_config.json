@@ -1,0 +1,103 @@
+[
+    {
+        "commandName": "sct_convert_binary_to_trilinear",
+        "scriptName" : "sct_convert_binary_to_trilinear",
+        "additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "MANDATORY ARGUMENTS",
+                    "parameters" :
+                        [
+                           {
+                                "command"      : "-i",
+                                "id"           : "sct_convert_binary_to_trilinear_m_ID",
+                                "description"  : "Binary segmentation of spinal cord",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "file",
+                                    "Title"       : "Binary segmentation"
+                                },
+                                "mandatory"   : "true"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-s",
+                                "id"           : "sct_convert_binary_to_trilinear_s_ID",
+                                "description"  : "Sigma of the smoothing Gaussian kernel (in voxel). Default=5",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "Sigma of the smoothing Gaussian kernel",
+                                    "min"         : "0",
+                                    "max"         : "9999",
+                                    "step"        : "1"
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-r",
+                                "id"           : "sct_convert_binary_to_trilinear_r_ID",
+                                "description"  : "Remove temporary files. Default=1",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "select",
+                                    "Title"       : "Remove temp files",
+                                    "selectList"  :
+                                        [
+                                            {
+                                                "value"       : "1",
+                                                "commandValue": "1"
+                                            },
+                                            {
+                                                "value"       : "0",
+                                                "commandValue": "0"
+                                            }
+                                        ]
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-v",
+                                "id"           : "sct_convert_binary_to_trilinear_v_ID",
+                                "description"  : "Verbose. Default=1",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "select",
+                                    "Title"       : "Verbose",
+                                    "selectList"  :
+                                        [
+                                            {
+                                                "value"       : "1",
+                                                "commandValue": "1"
+                                            },
+                                            {
+                                                "value"       : "0",
+                                                "commandValue": "0"
+                                            }
+                                        ]
+                                },
+                                "mandatory"   : "false"
+                            },
+                            {
+                                "command"      : "-h",
+                                "id"           : "sct_convert_binary_to_trilinear_h_ID",
+                                "description"  : "Help",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "checkbox",
+                                    "Title"       : "Help"
+                                },
+                                "mandatory"   : "false"
+                            }
+                        ]
+                }
+            ]
+    }
+]
+ 
