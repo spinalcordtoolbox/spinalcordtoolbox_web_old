@@ -1,0 +1,159 @@
+[
+    {
+        "commandName": "sct_straighten_spinalcord",
+        "scriptName" : "sct_straighten_spinalcord",
+		"additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "MANDATORY ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-i",
+                                "id"           : "sct_straighten_spinalcord_i_ID",
+                                "description"  : "input volume",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "input volume"                               
+                                },
+                                "mandatory"   : "true"
+                            },
+							{
+                                "command"      : "-c",
+                                "id"           : "sct_straighten_spinalcord_c_ID",
+                                "description"  : "centerline or segmentation. Centerline must cover each z slices",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "centerline or segmentation"                               
+                                },
+                                "mandatory"   : "true"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-p",
+                                "id"           : "sct_straighten_spinalcord_p_ID",
+                                "description"  : "amount of padding for generating labels. Default=30",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "number",
+                                    "Title"       : "amount of padding",
+                                    "min"         : "1",
+                                    "max"         : "9999",
+                                    "step"        : "1" 
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command": "-f",
+								"id": "sct_straighten_spinalcord_f_ID",
+								"description": "Method used to fit the centerline (or segmentation). Default=splines",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "fit the centerline or segmentation",
+									"selectList": [
+										{
+											"value": "splines",
+											"commandValue": "splines"
+										},
+										{
+											"value": "polynomial",
+											"commandValue": "polynomial"
+										}
+									]
+								},
+								"mandatory": "false"
+                            },
+							{
+                                "command": "-w",
+								"id": "sct_straighten_spinalcord_w_ID",
+								"description": " Final interpolation. Default=spline",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "Final interpolation",
+									"selectList": [
+										{
+											"value": "spline",
+											"commandValue": "spline"
+										},
+										{
+											"value": "nearestneighbor",
+											"commandValue": "nearestneighbor"
+										},
+										{
+											"value": "trilinear",
+											"commandValue": "trilinear"
+										}
+									]
+								},
+								"mandatory": "false"
+                            },
+                            {
+                                "command": "-r",
+								"id": "sct_straighten_spinalcord_r_ID",
+								"description": "remove temporary files. Default=1",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "remove temp files",
+									"selectList": [
+										{
+											"value": "1",
+											"commandValue": "1"
+										},
+										{
+											"value": "0",
+											"commandValue": "0"
+										}
+									]
+								},
+								"mandatory": "false"
+                            },
+                            {
+								"command": "-v",
+								"id": "sct_straighten_spinalcord_v_ID",
+								"description": "verbose. Default=0",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "verbose",
+									"selectList": [
+										{
+											"value": "0",
+											"commandValue": ""
+										},
+										{
+											"value": "1",
+											"commandValue": "txt"
+										},
+										{
+											"value": "2",
+											"commandValue": "txt+fig"
+										}
+									]
+								},
+								"mandatory": "false"
+							},
+							{
+								"command": "-h",
+								"id": "sct_straighten_spinalcord_h_ID",
+								"description": "Help",
+								"HTMLRendering": {
+									"HTMLType": "checkbox",
+									"Title": "Help"
+								},
+								"mandatory": "false"
+							}
+						 
+                        ]
+                }
+     
+            ]
+    }
+]
+ 

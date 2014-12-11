@@ -1,0 +1,160 @@
+[
+  {
+    "title": "sct_apply_transfo",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/script1_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_average_data_within_mask",
+	"pathConfig" : "/resources/ viewRessouces/js/commandsInputGenerator/data/config/script2_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_change_nifti_pixel_type",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/script3_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_compute_mtr",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/script4_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_concat_transfo",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_convert_binary_to_trilinear",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_convert_binary_to_trilinear_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_crop_image",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_crop_image_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_detect_spinalcord",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_detect_spinalcord_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_dice_coefficient",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_dice_coefficient_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_dmri_get_bvalue",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_dmri_get_bvalue_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_dmri_moco",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_dmri_separate_b0_and_dwi",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_eddy_correct",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_extract_metric",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_extract_metric_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_flip_data.sh",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_get_centerline",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_hausdorff_distance",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_icv",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_orientation",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_flatten_sagittal",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_progseg_config.json",
+	"activateScript" : "false"
+  },
+  {
+    "title": "sct_process_segmentation",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_process_segmentation_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_propseg",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_propseg_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_register_multimodal",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_register_multimodal_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_register_to_template",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_register_to_template_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_smooth_spinalcord",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_smooth_spinalcord_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_straighten_spinalcord",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_straighten_spinalcord_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_warp_template",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_warp_template_config.json",
+	"activateScript" : "true"
+  },
+  {
+    "title": "sct_label_utils",
+	"pathConfig" : "/resources/viewRessouces/js/commandsInputGenerator/data/config/sct_label_utils_config.json",
+	"activateScript" : "true"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

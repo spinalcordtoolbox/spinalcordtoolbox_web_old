@@ -1,0 +1,140 @@
+[
+    {
+        "commandName": "sct_process_segmentation",
+        "scriptName": "sct_process_segmentation",
+        "additionalScriptGenerator" : [],
+        "arguments": [
+            {
+                "argumentsSection": "MANDATORY ARGUMENTS",
+                "parameters": [
+                    {
+                        "command": "-i",
+                        "id": "sct_process_segmentation_i_ID",
+                        "description": "performs various types of processing from the spinal cord segmentation",
+                        "HTMLRendering": 
+						{
+                            "HTMLType": "fileList",
+                            "Title": "spinal cord segmentation file"
+                        },
+                        "mandatory": "true"
+                    },
+                    {
+                        "command": "-p",
+                        "id": "sct_process_segmentation_p_ID",
+                        "description": " type of process to be performed",
+                        "HTMLRendering": {
+                            "HTMLType": "select",
+                            "Title": "Specify type of process",
+                            "selectList": [
+                                {
+                                    "value": "extract_centerline",
+                                    "commandValue": "extract_centerline"
+                                },
+                                {
+                                    "value": "compute_csa",
+                                    "commandValue": "compute_csa"
+                                }
+                            ]
+                        },
+                        "mandatory": "true"
+                    }
+                ]
+            },
+            {
+                "argumentsSection": "OPTIONAL ARGUMENTS",
+                "parameters": [
+                    {
+                        "command": "-s",
+                        "id": "sct_process_segmentation_s_ID",
+                        "description": " smooth CSA values with spline. Default=1",
+                        "HTMLRendering": {
+                            "HTMLType": "select",
+                            "Title": "smooth CSA",
+                            "selectList": [
+                                {
+                                    "value": "1",
+                                    "commandValue": "1"
+                                },
+                                {
+                                    "value": "0",
+                                    "commandValue": "0"
+                                }
+                            ]
+                        },
+                        "mandatory": "false"
+                    },
+                    {
+                        "command": "-b",
+                        "id": "sct_process_segmentation_b_ID",
+                        "description": " outputs a volume in which each slice's value is equal to the CSA in mm^2. Default=0",
+                        "HTMLRendering": {
+                            "HTMLType": "select",
+                            "Title": "volume output value",
+                            "selectList": [
+                                {
+                                    "value": "1",
+                                    "commandValue": "1"
+                                },
+                                {
+                                    "value": "0",
+                                    "commandValue": "0"
+                                }
+                            ]
+                        },
+                        "mandatory": "false"
+                    },
+                    {
+                        "command": "-r",
+                        "id": "sct_process_segmentation_r_ID",
+                        "description": "remove temporary files. Default=1",
+                        "HTMLRendering": {
+                            "HTMLType": "select",
+                            "Title": "remove temp files",
+                            "selectList": [
+                                {
+                                    "value": "1",
+                                    "commandValue": "1"
+                                },
+                                {
+                                    "value": "0",
+                                    "commandValue": "0"
+                                }
+                            ]
+                        },
+                        "mandatory": "false"
+                    },
+                    {
+                        "command": "-v",
+                        "id": "sct_process_segmentation_v_ID",
+                        "description": "verbose. Default=0",
+                        "HTMLRendering": {
+                            "HTMLType": "select",
+                            "Title": "verbose",
+                            "selectList": [
+                                {
+                                    "value": "1",
+                                    "commandValue": "1"
+                                },
+                                {
+                                    "value": "0",
+                                    "commandValue": "0"
+                                }
+                            ]
+                        },
+                        "mandatory": "false"
+                    },
+                    {
+                        "command": "-h",
+                        "id": "sct_process_segmentation_h_ID",
+                        "description": "Help",
+                        "HTMLRendering": {
+                            "HTMLType": "checkbox",
+                            "Title": "Help"
+                        },
+                        "mandatory": "false"
+                    }
+                ]
+            }
+        ]
+    }
+]
