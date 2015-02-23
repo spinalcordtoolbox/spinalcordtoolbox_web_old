@@ -1,0 +1,143 @@
+[
+    {
+        "commandName": "sct_register_to_template",
+        "scriptName" : "sct_register_to_template",
+		"additionalScriptGenerator" : [],
+        "arguments":
+            [
+                {
+                    "argumentsSection" : "MANDATORY ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-i",
+                                "id"           : "sct_register_to_template_i_ID",
+                                "description"  : "anatomical image",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "anatomical image"                               
+                                },
+                                "mandatory"   : "true"
+                            },
+							{
+                                "command"      : "-l",
+                                "id"           : "sct_register_to_template_l_ID",
+                                "description"  : "landmarks at spinal cord center. See: http://sourceforge.net/p/spinalcordtoolbox/wiki/create_labels/",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "landmarks label"                               
+                                },
+                                "mandatory"   : "true"
+                            },
+							{
+                                "command"      : "-m",
+                                "id"           : "sct_register_to_template_m_ID",
+                                "description"  : "spinal cord segmentation.",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType"    : "fileList",
+                                    "Title"       : "segmentation file"                               
+                                },
+                                "mandatory"   : "true"
+                            }
+                        ]
+                },
+                {
+                    "argumentsSection" : "OPTIONAL ARGUMENTS",
+                    "parameters" :
+                        [
+                            {
+                                "command"      : "-o",
+                                "id"           : "sct_register_to_template_o_ID",
+                                "description"  : "output type. 0: warp, 1: warp+images. Default=1",
+                                "HTMLRendering"		   :
+                                {
+                                    "HTMLType": "select",
+									"Title": "output type",
+									"selectList": [
+										{
+											"value": "1",
+											"commandValue": "warp"
+										},
+										{
+											"value": "0",
+											"commandValue": "wrap+images"
+										}
+									] 
+                                },
+                                "mandatory"   : "false"
+                            },
+							{
+                                "command": "-s",
+								"id": "sct_register_to_template_s_ID",
+								"description": "Speed of registration. Slow gives the best results. Default=fast",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "Speed of registration",
+									"selectList": [
+										{
+											"value": "slow",
+											"commandValue": "slow"
+										},
+										{
+											"value": "normal",
+											"commandValue": "normal"
+										},
+										{
+											"value": "fast",
+											"commandValue": "fast"
+										}
+									]
+								},
+								"mandatory": "false"
+                            },
+                            {
+                                "command": "-r",
+								"id": "sct_register_to_template_r_ID",
+								"description": "remove temporary files. Default=1",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "remove temp files",
+									"selectList": [
+										{
+											"value": "1",
+											"commandValue": "1"
+										},
+										{
+											"value": "0",
+											"commandValue": "0"
+										}
+									]
+								},
+								"mandatory": "false"
+                            },
+                            {
+								"command": "-t",
+								"id": "sct_register_to_template_t_ID",
+								"description": " use down sampled template files (for testing)",
+								"HTMLRendering": {
+									"HTMLType": "select",
+									"Title": "template files",
+									"selectList": [
+										{
+											"value": "0",
+											"commandValue": "0"
+										},
+										{
+											"value": "1",
+											"commandValue": "1"
+										}
+									]
+								},
+								"mandatory": "false"
+                            }
+						 
+                        ]
+                }
+     
+            ]
+    }
+]
+ 

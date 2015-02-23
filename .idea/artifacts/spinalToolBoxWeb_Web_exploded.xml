@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spinalToolBoxWeb:Web exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/spinalToolBoxWeb_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="spinalToolBoxWeb/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spinalToolBoxWeb" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="spring-ws" />
+          <element id="library" level="project" name="spring-webmvc-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-websocket-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-webmvc-portlet-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-web-4.1.0.RELEASE" />
+          <element id="library" level="project" name="hibernate-core-4.2.2.Final" />
+          <element id="library" level="project" name="spring-context-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-core-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-jdbc-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-beans-4.1.0.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

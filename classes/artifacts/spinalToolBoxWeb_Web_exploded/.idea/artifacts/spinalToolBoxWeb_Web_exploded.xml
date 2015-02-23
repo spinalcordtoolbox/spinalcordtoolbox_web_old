@@ -1,0 +1,49 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spinalToolBoxWeb:Web exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/spinalToolBoxWeb_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="spinalToolBoxWeb/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spinalToolBoxWeb" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="spring-ws" />
+          <element id="library" level="project" name="spring-webmvc-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-websocket-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-webmvc-portlet-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-web-4.1.0.RELEASE" />
+          <element id="library" level="project" name="hibernate-core-4.2.2.Final" />
+          <element id="library" level="project" name="spring-context-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-core-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-jdbc-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-beans-4.1.0.RELEASE" />
+          <element id="library" level="project" name="antlr-2.7.7" />
+          <element id="library" level="project" name="aopalliance-1.0" />
+          <element id="library" level="project" name="commons-logging-1.1.3" />
+          <element id="library" level="project" name="dom4j-1.6.1" />
+          <element id="library" level="project" name="hibernate-commons-annotations-4.0.2.Final" />
+          <element id="library" level="project" name="hibernate-jpa-2.0-api-1.0.1.Final" />
+          <element id="library" level="project" name="javassist-3.15.0-GA" />
+          <element id="library" level="project" name="jboss-logging-3.1.0.GA" />
+          <element id="library" level="project" name="jboss-transaction-api_1.1_spec-1.0.1.Final" />
+          <element id="library" level="project" name="spring-aop-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-aspects-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-context-support-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-expression-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-instrument-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-instrument-tomcat-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-jms-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-messaging-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-orm-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-oxm-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-test-4.1.0.RELEASE" />
+          <element id="library" level="project" name="spring-tx-4.1.0.RELEASE" />
+          <element id="library" level="project" name="commons-io-2.4" />
+          <element id="library" level="project" name="commons-fileupload-1.3.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

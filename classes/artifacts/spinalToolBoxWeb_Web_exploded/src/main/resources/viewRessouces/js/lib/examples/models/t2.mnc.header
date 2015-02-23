@@ -1,0 +1,37 @@
+{
+    "yspace": {
+        "start": -443.879578,
+        "step": -1,
+        "direction_cosines": [
+            0,
+            1,
+            0
+        ],
+        "space_length": 384
+    },
+    "xspace": {
+        "start": -20.80964469909668,
+        "step": 1,
+        "direction_cosines": [
+            1,
+            0,
+            0
+        ],
+        "space_length": 43
+    },
+    "zspace": {
+        "start": 215.867081,
+        "step": 1,
+        "direction_cosines": [
+            -1,
+            0,
+            0
+        ],
+        "space_length": 696
+    },
+    "order": [
+        "xspace",
+        "zspace",
+        "yspace"
+    ]
+}
